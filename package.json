@@ -14,8 +14,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1"
   },
   "scripts": {
     "dev": "vite",
@@ -23,32 +25,42 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "init-msw": "msw init public/"
+    "init-msw": "msw init public/",
+    "test-storybook": "test-storybook",
+    "chromatic": "npx chromatic --project-token=chpt_a0845b49292300e"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@joshwooding/vite-plugin-react-docgen-typescript": "^0.5.0",
+    "@reduxjs/toolkit": "^2.5.1",
+    "@storybook/addon-a11y": "^8.5.7",
+    "@storybook/addon-coverage": "^1.0.5",
     "@storybook/addon-essentials": "^8.5.6",
     "@storybook/addon-interactions": "^8.5.6",
     "@storybook/addon-links": "^8.5.6",
+    "@storybook/addon-viewport": "^8.5.8",
     "@storybook/blocks": "^8.5.6",
-    "@storybook/react": "^8.5.6",
-    "@storybook/react-vite": "^8.5.6",
+    "@storybook/builder-vite": "^8.5.8",
+    "@storybook/react": "^8.5.8",
+    "@storybook/react-vite": "^8.5.8",
     "@storybook/test": "^8.5.6",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@storybook/test-runner": "^0.21.2",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "chromatic": "^11.25.2",
+    "esbuild": "^0.25.0",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.9.0",
-    "msw": "^2.3.0",
+    "msw": "^2.7.0",
     "msw-storybook-addon": "^2.0.3",
-    "storybook": "^8.5.6",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^6.1.1"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
@@ -58,5 +70,10 @@
       "plugin:storybook/recommended"
     ]
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.0",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }

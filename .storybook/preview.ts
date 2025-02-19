@@ -1,4 +1,11 @@
 import type { Preview } from "@storybook/react";
+import { Provider } from "react-redux";
+import { initialize, mswLoader } from "msw-storybook-addon";
+import { store } from "../src/lib/store";
+import "../src/index.css";
+
+// Registers the msw addon
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +16,7 @@ const preview: Preview = {
       },
     },
   },
+  loaders: [mswLoader],
 };
 
 export default preview;
